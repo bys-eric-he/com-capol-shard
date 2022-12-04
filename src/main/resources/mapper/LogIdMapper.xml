@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.capol.shard.mapper.LogIdMapper">
+
+    <select id="queryOne" resultType="com.capol.shard.entity.LogId">
+        select
+        id as id,
+        comment as comment,
+        create_date as createDate
+        from
+        tb_log_id
+        where
+        id = #{id}
+    </select>
+
+    <insert id="save" >
+        insert into tb_log_id(id, comment,create_date)
+        values (#{id}, #{comment},#{createDate})
+    </insert>
+
+</mapper>
